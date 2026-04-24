@@ -8,8 +8,6 @@ class ProduitSujet implements Sujet
     private array    $observateurs = [];
     private ?Produit $produit      = null;
 
-    // ── Gestion des abonnés ─────────────────────────────────────────────────
-
     public function abonner(Observateur $obs): void
     {
         $this->observateurs[] = $obs;

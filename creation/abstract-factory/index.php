@@ -10,7 +10,6 @@ require_once '../common/product.php';
  *     d'objets cohérents entre eux (livre + téléphone + ordinateur).
  */
 
-// Interface commune : définit les produits que chaque factory doit créer
 interface AbstractProductFactory
 {
     public function createBook(): Product;
@@ -19,7 +18,6 @@ interface AbstractProductFactory
     public function createHeadphones(): Product;
 }
 
-// ── Factory France ──────────────────────────────────────────────────────────
 class FrenchFactory implements AbstractProductFactory
 {
     public function createBook(): Product
@@ -43,7 +41,6 @@ class FrenchFactory implements AbstractProductFactory
     }
 }
 
-// ── Factory USA ─────────────────────────────────────────────────────────────
 class USFactory implements AbstractProductFactory
 {
     public function createBook(): Product
@@ -67,7 +64,6 @@ class USFactory implements AbstractProductFactory
     }
 }
 
-// ── Factory Maroc ───────────────────────────────────────────────────────────
 class MAFactory implements AbstractProductFactory
 {
     public function createBook(): Product
@@ -91,7 +87,6 @@ class MAFactory implements AbstractProductFactory
     }
 }
 
-// ── Fonction utilitaire pour afficher tous les produits d'une factory ───────
 function showCatalog(AbstractProductFactory $factory, string $region): void
 {
     echo nl2br( "=== Catalogue $region ===\n");
@@ -102,15 +97,13 @@ function showCatalog(AbstractProductFactory $factory, string $region): void
     echo nl2br("\n");
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
 showCatalog(new FrenchFactory(), 'France 🇫🇷');
 showCatalog(new USFactory(),     'USA 🇺🇸');
 showCatalog(new MAFactory(),     'Maroc 🇲🇦');
 
-// Exemple : changer de région dynamiquement
 echo nl2br("=== Changement dynamique de région ===\n");
 
-$region   = 'US'; // simuler un paramètre de config
+$region   = 'US'; 
 $factory  = match ($region) {
     'FR'  => new FrenchFactory(),
     'US'  => new USFactory(),

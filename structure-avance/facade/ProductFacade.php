@@ -20,8 +20,6 @@ class ProductFacade
     }
 }
 
-// ── Exemples d'utilisation ─────────
-
 echo nl2br("=== Facade ===\n\n");
 
 $facade  = new ProductFacade();

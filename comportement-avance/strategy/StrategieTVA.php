@@ -5,6 +5,6 @@ class StrategieTVA implements StrategiePrix
 {
     public function calculer(float $prix): float
     {
-        return $prix * 1.2; // +20% TVA
+        return $prix * 1.2;
     }
 }

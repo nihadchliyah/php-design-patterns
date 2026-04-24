@@ -20,7 +20,6 @@ class ProductProxy
 
     private function load(): Product
     {
-        // simulation base de données
         return new Product($this->id, "Produit DB", 99.99);
     }
 
@@ -33,20 +32,15 @@ class ProductProxy
     }
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
-
 echo nl2br("=== Proxy  ===\n\n");
 
-// Exemple 1 : premier accès → charge le produit depuis la "BDD"
 $proxy = new ProductProxy(10);
 echo nl2br("Premier accès (chargement) :\n");
 echo nl2br($proxy->getProduct()->getInfo() . "\n\n");
 
-// Exemple 2 : second appel sur le même proxy → retourne l'instance déjà en mémoire
 echo nl2br("Second accès (déjà en mémoire) :\n");
 echo nl2br($proxy->getProduct()->getInfo() . "\n\n");
 
-// Exemple 3 : autre proxy avec un id différent
 echo nl2br("Autre proxy (id 42) :\n");
 $proxy2 = new ProductProxy(42);
 echo nl2br($proxy2->getProduct()->getInfo() . "\n");

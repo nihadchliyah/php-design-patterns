@@ -19,7 +19,7 @@ class ProductAdapter
     }
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
+
 
 echo nl2br("=== Adapter ===\n\n");
 

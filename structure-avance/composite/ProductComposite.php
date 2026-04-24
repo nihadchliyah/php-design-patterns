@@ -28,11 +28,10 @@ class ProductComposite implements ProductComponent
     }
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
 
 echo nl2br("=== Composite ===\n\n");
 
-// Exemple 1 : groupe simple
+
 echo nl2br("-- Groupe simple --\n");
 $p1    = new Product(1, "Clavier", 50);
 $p2    = new Product(2, "Souris",  20);
@@ -44,7 +43,7 @@ $group->add($leaf1);
 $group->add($leaf2);
 echo nl2br($group->getInfo() . "\n");
 
-// Exemple 2 : groupes imbriqués (composite dans un composite)
+
 echo nl2br("-- Groupes imbriqués --\n");
 $p3    = new Product(3, "Écran",   199);
 $p4    = new Product(4, "Webcam",   60);

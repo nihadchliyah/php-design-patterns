@@ -25,23 +25,19 @@ class ProductBuilder
         return $this;
     }
 
-    public function setPrix(float $prix): self  // ← méthode manquante ajoutée
+    public function setPrix(float $prix): self
     {
         $this->prix = $prix;
         return $this;
     }
 
-    public function build(): Product  // ← méthode manquante ajoutée
+    public function build(): Product
     {
         return new Product($this->id, $this->libelle, $this->prix);
     }
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
-
 echo nl2br("=== Builder ===\n\n");
-
-// Exemple 1 : Livre
 echo nl2br("Produit 1 — Livre :\n");
 $book = (new ProductBuilder())
     ->setId(1)
@@ -50,7 +46,6 @@ $book = (new ProductBuilder())
     ->build();
 $book->display();
 
-// Exemple 2 : Téléphone
 echo nl2br( "Produit 2 — Téléphone :\n");
 $phone = (new ProductBuilder())
     ->setId(2)
@@ -59,7 +54,6 @@ $phone = (new ProductBuilder())
     ->build();
 $phone->display();
 
-// Exemple 3 : Ordinateur portable
 echo nl2br("Produit 3 — Ordinateur :\n");
 $laptop = (new ProductBuilder())
     ->setId(3)
@@ -68,7 +62,6 @@ $laptop = (new ProductBuilder())
     ->build();
 $laptop->display();
 
-// Exemple 4 : Tablette
 echo nl2br("Produit 4 — Tablette :\n");
 $tablet = (new ProductBuilder())
     ->setId(4)
@@ -77,7 +70,6 @@ $tablet = (new ProductBuilder())
     ->build();
 $tablet->display();
 
-// Exemple 5 : Casque audio
 echo nl2br("Produit 5 — Casque :\n");
 $headphones = (new ProductBuilder())
     ->setId(5)

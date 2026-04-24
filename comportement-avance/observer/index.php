@@ -16,8 +16,6 @@ require_once 'StockAlert.php';
  * vers tous les abonnés (Logger, EmailSender, SmsSender, StockAlert).
  */
 
-// ── Observateurs ────────────────────────────────────────────────────────────
-
 $logger     = new Logger();
 $email      = new EmailSender('admin@boutique.fr');
 $sms        = new SmsSender('+33 6 12 34 56 78');

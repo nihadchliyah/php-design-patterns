@@ -28,8 +28,6 @@ class ProductFactory
     }
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
-
 echo nl2br(" ====== Factory Method ======\n\n");
 
 $types = ['book', 'phone', 'laptop', 'tablet', 'headphones'];
@@ -39,7 +37,6 @@ foreach ($types as $type) {
     ProductFactory::create($type)->display();
 }
 
-// Exemple avec un type inconnu (exception)
 echo nl2br("Test type inconnu :\n");
 try {
     ProductFactory::create('unknown');

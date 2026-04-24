@@ -24,21 +24,19 @@ class DiscountDecorator extends ProductDecorator
     }
 }
 
-// ── Exemples d'utilisation ──────────────────────────────────────────────────
+
 
 echo nl2br("=== Decorator ===\n\n");
 
-// Exemple 1 : remise de 5€ sur une souris
+
 $product1 = new Product(1, "Souris", 30);
 $promo1   = new DiscountDecorator($product1, 5);
 echo nl2br($promo1->getInfo() . "\n");
-
-// Exemple 2 : remise de 100€ sur un ordinateur
 $product2 = new Product(2, "Ordinateur Dell", 1199.99);
 $promo2   = new DiscountDecorator($product2, 100);
 echo nl2br($promo2->getInfo() . "\n");
 
-// Exemple 3 : remise de 10€ sur un casque
+
 $product3 = new Product(3, "Casque Sony", 89.99);
 $promo3   = new DiscountDecorator($product3, 10);
 echo nl2br($promo3->getInfo() . "\n");
