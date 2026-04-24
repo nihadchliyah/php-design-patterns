@@ -23,7 +23,6 @@ $email      = new EmailSender('admin@boutique.fr');
 $sms        = new SmsSender('+33 6 12 34 56 78');
 $stockAlert = new StockAlert(seuilMinimum: 3);
 
-// ── Scénario 1 : Ajout d'un PC ──────────────────────────────────────────────
 
 echo nl2br("====== Scenario 1 : Ajout d'un produit ======\n\n");
 
@@ -37,7 +36,7 @@ $sujet->ajouterProduit(new Produit(1, 'PC Dell XPS', 1199.99, 10));
 
 echo nl2br("\n");
 
-// ── Scénario 2 : Modification de prix ───────────────────────────────────────
+
 
 echo nl2br("====== Scenario 2 : Modification du prix ======\n\n");
 
@@ -45,7 +44,6 @@ $sujet->modifierPrix(999.99);
 
 echo nl2br("\n");
 
-// ── Scénario 3 : Stock bas ───────────────────────────────────────────────────
 
 echo nl2br("====== Scenario 3 : Stock faible (sous le seuil) ======\n\n");
 
@@ -53,7 +51,7 @@ $sujet->modifierStock(2);
 
 echo nl2br("\n");
 
-// ── Scénario 4 : Rupture totale ─────────────────────────────────────────────
+
 
 echo nl2br("====== Scenario 4 : Rupture de stock ======\n\n");
 
@@ -61,7 +59,7 @@ $sujet->modifierStock(0);
 
 echo nl2br("\n");
 
-// ── Scénario 5 : Desabonnement (SMS retire son abonnement) ──────────────────
+
 
 echo nl2br("====== Scenario 5 : Desabonnement du SMS, puis restock ======\n\n");
 
@@ -70,7 +68,7 @@ $sujet->modifierStock(20);
 
 echo nl2br("\n");
 
-// ── Scénario 6 : Nouveau produit — Téléphone ────────────────────────────────
+
 
 echo nl2br("====== Scenario 6 : Nouveau produit (Telephone) ======\n\n");
 
@@ -84,7 +82,7 @@ $sujet2->modifierPrix(1199.00);
 
 echo nl2br("\n");
 
-// ── Scénario 7 : Suppression de produit ─────────────────────────────────────
+
 
 echo nl2br("====== Scenario 7 : Suppression du produit ======\n\n");
 

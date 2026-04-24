@@ -30,7 +30,7 @@ class ProduitSujet implements Sujet
         }
     }
 
-    // ── Actions métier (déclenchent les notifications) ──────────────────────
+
 
     public function ajouterProduit(Produit $produit): void
     {
