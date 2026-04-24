@@ -5,7 +5,7 @@ abstract class Handler
 {
     protected ?Handler $suivant = null;
 
-    public function setSuivant(Handler $suivant): static
+    public function setSuivant(Handler $suivant): Handler
     {
         $this->suivant = $suivant;
         return $suivant;
