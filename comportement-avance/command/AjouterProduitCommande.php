@@ -13,6 +13,6 @@ class AjouterProduitCommande implements Commande
 
     public function executer(): void
     {
-        echo nl2br("  [+] Produit ajouté : {$this->produit->libelle} — {$this->produit->prix} €\n");
+        echo nl2br(" Produit ajouté : {$this->produit->libelle} —> {$this->produit->prix} €\n");
     }
 }
